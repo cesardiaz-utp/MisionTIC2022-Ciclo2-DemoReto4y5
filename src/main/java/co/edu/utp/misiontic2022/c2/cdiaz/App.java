@@ -2,6 +2,7 @@ package co.edu.utp.misiontic2022.c2.cdiaz;
 
 import java.sql.SQLException;
 
+import co.edu.utp.misiontic2022.c2.cdiaz.controller.ReportesController;
 import co.edu.utp.misiontic2022.c2.cdiaz.model.dao.ProyectosDao;
 import co.edu.utp.misiontic2022.c2.cdiaz.model.vo.ProyectosVo;
 import co.edu.utp.misiontic2022.c2.cdiaz.util.JDBCUtilities;
@@ -13,8 +14,8 @@ import co.edu.utp.misiontic2022.c2.cdiaz.util.JDBCUtilities;
 public class App {
     public static void main(String[] args) {
         try {
-            var pd = new ProyectosDao();
-            var lista = pd.listarProyectos("Casa Campestre", "Condominio");
+            var pd = new ReportesController();
+            var lista = pd.listarProyectosExcluyendoClasificaciones("Casa Campestre", "Condominio");
             for (ProyectosVo proyecto : lista) {
                 System.out.println(proyecto);
             }

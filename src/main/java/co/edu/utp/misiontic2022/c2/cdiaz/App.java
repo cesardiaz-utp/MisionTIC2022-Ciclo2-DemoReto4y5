@@ -1,5 +1,6 @@
 package co.edu.utp.misiontic2022.c2.cdiaz;
 
+import co.edu.utp.misiontic2022.c2.cdiaz.view.ReportesGUI;
 import co.edu.utp.misiontic2022.c2.cdiaz.view.ReportesView;
 
 /**
@@ -8,7 +9,10 @@ import co.edu.utp.misiontic2022.c2.cdiaz.view.ReportesView;
  */
 public class App {
     public static void main(String[] args) {
-        var view = new ReportesView();
-        view.imprimirProyectosSinCasaCampestreNiCondominio();
+        //var view = new ReportesView();
+        //view.imprimirProyectosSinCasaCampestreNiCondominio();
+
+        var frm = new ReportesGUI();
+        frm.setVisible(true);
     }
 }

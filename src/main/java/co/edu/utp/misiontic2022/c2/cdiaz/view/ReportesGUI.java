@@ -39,8 +39,20 @@ public class ReportesGUI extends JFrame {
         btnProyectos.addActionListener(e -> cargarTablaProyectosSinCasasCampestresNiCondominios());
         panel.add(btnProyectos);
 
+        var btnSecundario = new JButton("Esto es una prueba");
+        btnSecundario.addActionListener(e -> cargarTablaPrueba());
+        panel.add(btnSecundario);
+
         tabla = new JTable();
         getContentPane().add(new JScrollPane(tabla), BorderLayout.CENTER);
+    }
+
+    private void cargarTablaPrueba() {
+        var ciudad = JOptionPane.showInputDialog(this, "Ingrese nombre de Ciudad:");
+
+        var tableModel = new PruebaTableModel();
+        
+        tabla.setModel(tableModel);
     }
 
     private void cargarTablaProyectosSinCasasCampestresNiCondominios() {
@@ -127,4 +139,22 @@ public class ReportesGUI extends JFrame {
 
     }
 
+    private class PruebaTableModel extends AbstractTableModel {
+
+        @Override
+        public int getRowCount() {
+            return 0;
+        }
+
+        @Override
+        public int getColumnCount() {
+            return 3;
+        }
+
+        @Override
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            return null;
+        }
+
+    }
 }
